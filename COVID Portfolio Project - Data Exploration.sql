@@ -1,13 +1,16 @@
+
+/*
+Covid 19 Data Exploration 
+
+Skills used: Joins, CTE's, Temp Tables, Windows Functions, Aggregate Functions, Creating Views, Converting Data Types
+
+*/
 select *
 from portfolioproject..CovidDeaths
 where continent is not null
 order by 3,4
 
-select *
-from portfolioproject..CovidVaccinations
-order by 3,4
-
-
+-- Select Data that we are going to be starting with
 
 select location ,date , total_cases	 ,new_cases ,total_deaths , population
 from portfolioproject..CovidDeaths
@@ -15,7 +18,7 @@ where continent is not null
 order by 1,2
 
 
--- loking at total cases Vs total deaths
+--  total cases Vs total deaths
 -- Shows likelihood of dying if you contract covid in your country
 
 select location ,date , total_cases	 ,total_deaths ,(total_deaths/total_cases)*100 as DeathPersentage
